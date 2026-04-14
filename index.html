@@ -1387,7 +1387,7 @@ class ArenaScene extends Phaser.Scene {
     this.enemies.forEach(e=>{const minD=Math.min(...pts.map(p=>Math.sqrt((p.x-e.x)**2+(p.y-e.y)**2)));
       if(minD<e.r+14){this.dealDamageToEnemy(e,150);this.emitHitImpact(e.x,e.y);
         const dx2=e.x-this.player.x,dy2=e.y-this.player.y,dd=Math.sqrt(dx2*dx2+dy2*dy2)||1;
-        e.x+=dx2/dd*8;e.y+=dy2/dd*8;this.applyStatus(e,'stagger',1500);}});
+        e.x+=dx2/dd*90;e.y+=dy2/dd*90;this.applyStatus(e,'stagger',1500);}});
     this.cameraShake(8);
     this.time.delayedCall(10000,()=>{this.dragon.state='READY';});
   }
